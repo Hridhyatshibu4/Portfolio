@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hridhya's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .hero h2 {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill, .project {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 1rem);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .skill, .project {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill, .project {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hridhya's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="placeholder.jpg" alt="Hridhya's Portrait">
+        <h2>Hello! I'm Hridhya</h2>
+        <p>Aspiring Analyst Programmer with a passion for data and technology.</p>
+    </section>
+
+    <section id="about">
+        <h3 class="section-title">About Me</h3>
+        <p>I am a Computer Science graduate majoring in Data Science. Currently, I am preparing for my Master's in Information Technology Management at Deakin University. My goal is to work as an Analyst Programmer, leveraging data-driven solutions to solve complex problems.</p>
+    </section>
+
+    <section id="skills">
+        <h3 class="section-title">Skills</h3>
+        <div class="skills">
+            <div class="skill">
+                <h4>Programming</h4>
+                <p>Python, Java, SQL</p>
+            </div>
+            <div class="skill">
+                <h4>Data Analysis</h4>
+                <p>R, Tableau, Excel</p>
+            </div>
+            <div class="skill">
+                <h4>Web Development</h4>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h3 class="section-title">Projects</h3>
+        <div class="projects">
+            <div class="project">
+                <h4>Project Title 1</h4>
+                <p>Description of the project and its key features.</p>
+            </div>
+            <div class="project">
+                <h4>Project Title 2</h4>
+                <p>Description of the project and its key features.</p>
+            </div>
+            <div class="project">
+                <h4>Project Title 3</h4>
+                <p>Description of the project and its key features.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3 class="section-title">Contact</h3>
+        <p>Feel free to reach out to me at <a href="mailto:hridhya.email@example.com">hridhya.email@example.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hridhya. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
