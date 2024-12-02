@@ -13,22 +13,22 @@
 <body class="font-poppins bg-cover bg-center text-gray-200" style="background-image: url('./images/background.jpeg');">
     <header class="sticky top-0 z-50 bg-gray-800 bg-opacity-90 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-3xl font-bold text-white">Hridhya Shibu</div>
+            <div class="text-2xl md:text-3xl font-bold text-white">Hridhya Shibu</div>
             <nav>
-                <ul class="flex space-x-8">
+                <ul class="flex flex-wrap space-x-4 md:space-x-8">
                     <li><a href="#about" class="text-white font-semibold hover:text-gray-300 transition">About</a></li>
                     <li><a href="#skills" class="text-white font-semibold hover:text-gray-300 transition">Skills</a></li>
                     <li><a href="#projects" class="text-white font-semibold hover:text-gray-300 transition">Projects</a></li>
-                    <li><a href="#contact-footer" class="text-white font-semibold hover:text-gray-300 transition">Contact Me</a></li>
                     <li><a href="./assets/resume.pdf" target="_blank" class="text-white font-semibold hover:text-gray-300 transition">Resume</a></li>
+                    <li><a href="#contact-footer" class="text-white font-semibold hover:text-gray-300 transition">Contact Me</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="hero h-screen flex flex-col justify-center items-center text-center text-white backdrop-blur-md">
-        <h1 class="text-7xl font-bold animate-fade-in-down">Hridhya Shibu</h1>
-        <p class="text-4xl mt-4 animate-fade-in-up">Aspiring Analyst Programmer | Data-Driven Problem Solver</p>
+        <h1 class="text-5xl md:text-7xl font-bold animate-fade-in-down">Hridhya Shibu</h1>
+        <p class="text-2xl md:text-4xl mt-4 animate-fade-in-up">Aspiring Analyst Programmer | Data-Driven Problem Solver</p>
     </section>
 
     <section id="about" class="about-section max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center">
@@ -37,7 +37,7 @@
         </div>
         <div class="w-full md:w-1/2 p-6">
             <h2 class="text-4xl md:text-6xl font-bold text-gray-800 animate-slide-in-left">About Me</h2>
-            <p class="text-lg md:text-2xl mt-4">I am a Computer Science graduate specializing in Data Science. I have experience in statistical analysis, data manipulation, and visualization techniques. Currently, I am preparing for my Master's in IT Management at Deakin University.</p>
+            <p class="text-lg md:text-2xl mt-4">I am a final-year Computer Science student at Deakin University, specializing in Data Science. With a strong foundation in statistical analysis, data manipulation, and visualization techniques, I thrive on transforming complex data into actionable insights. I have successfully led technology-driven projects across the healthcare and construction industries, driving operational improvements and optimizing processes. I'm passionate about using data to solve real-world problems and am committed to delivering impactful solutions in collaborative, high-performance teams. Outside of my technical work, you'll often find me dancing—letting the rhythm of life inspire my creativity.</p>
         </div>
     </section>
 
@@ -67,16 +67,22 @@
                         <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">Project Echo</h4>
                     </div>
                     <div class="project-details hidden mt-4">
-                        <p><strong>Project Overview:</strong> Project Echo, founded in 2022, develops bioacoustics tools to help conservationists track endangered species through audio classification. Databytes powers this initiative with innovative technologies.</p>
-                        <p><strong>Role Involved:</strong>
-                            <ul class="list-disc list-inside">
-                                <li>Led the API team, refactoring code for maintainability and security by implementing input validation, authentication, and encryption to protect sensitive data.</li>
-                                <li>Developed and tested API endpoints for user authentication and data retrieval, ensuring secure data handling through validation testing.</li>
-                                <li>Integrated environment variables, improving system scalability, security, and deployment efficiency while reducing vulnerabilities.</li>
-                                <li>Coordinated team tasks, improving task completion times and troubleshooting technical issues, minimizing downtime, and preventing future API challenges.</li>
-                            </ul>
+                        <p><strong>Overview:</strong> Project Echo uses bioacoustic analysis to track endangered species by classifying audio data. As the lead API developer, I focused on building efficient RESTful APIs and enhancing system security through input validation, user authentication, and data encryption. I also optimized system performance by integrating MongoDB for data storage and FastAPI for fast data processing. Docker was used for smooth deployment, ensuring scalability and reliability for large datasets. The project significantly aids conservation efforts by providing real-time species tracking.
                         </p>
-                        <p><strong>Tools Used:</strong> Trello, Python, FastAPI, MongoDB</p>
+                        <br>
+                        <p><strong>Tools Used:</strong> Python, FastAPI, MongoDB, Docker</p>
+                    </div>
+                </div>
+              
+                <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <div class="flex items-center">
+                        <img src="./images/project3-thumbnail.jpeg" alt="Appointment Data Analysis" class="w-24 h-24 mr-6 rounded-xl">
+                        <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">Appointment Data Analysis</h4>
+                    </div>
+                    <div class="project-details hidden mt-4">
+                        <p><strong>Overview:</strong> Currently working on an analytical project to enhance Telehealth services by analyzing daily appointment reports. The focus is to identify and resolve issues surrounding failed connections between patients and specialist clinics at Eastern Health. Using Power BI and Power Query, this project aims to detect patterns in missed appointments, optimize scheduling workflows, and streamline communication channels to improve patient service delivery and reduce operational delays.</p>
+                        <br>
+                        <p><strong>Tools Used:</strong> Power BI, Power Query, Excel, Python, IPM, CPF, Health Direct, Modica</p>
                     </div>
                 </div>
                 <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
@@ -85,30 +91,22 @@
                         <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">IREC Safety System</h4>
                     </div>
                     <div class="project-details hidden mt-4">
-                        <p><strong>Project Overview:</strong> Enhanced safety procedures, created a farm induction video, developed a safety sign-in system, and contributed to renovation plans for IREC’s educational infrastructure.</p>
-                        <p><strong>Role Involved:</strong>
-                            <ul class="list-disc list-inside">
-                                <li>Led tech integration, streamlining safety procedures and enhancing visitor engagement.</li>
-                                <li>Developed a 3.5-minute farm induction video with QR codes for guided tours, incorporating the Safety Ag app.</li>
-                                <li>Implemented a safety sign-in system and leveraged data analysis tools to improve processes.</li>
-                                <li>Managed funding and regulatory approvals, ensuring compliance with industry standards.</li>
-                                <li>Improved site accessibility by developing digital tools to make educational resources more engaging.</li>
-                            </ul>
-                        </p>
-                        <p><strong>Tools Used:</strong> Trello, Excel, Python, Adobe, Canva, InVideo AI, QR Code Generator, Google Forms</p>
+                        <p><strong>Overview:</strong> Led the tech integration to enhance safety procedures and developed a digital safety sign-in system, improving efficiency by 40%. I also created a farm induction video with interactive QR codes.</p>
+                        <br>
+                        <p><strong>Tools Used:</strong> Python, Adobe, Canva, QR Code Generator, Excel</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact-footer" class="contact-footer py-16">
+    <footer id="contact-footer" class="contact-footer py-10">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-200 mb-6">Contact Me</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-200 mb-4">Contact Me</h2>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-x-8 md:space-y-0">
-                <a href="mailto:hridhyatshibuh4@gmail.com" class="text-gray-200 text-2xl md:text-3xl hover:text-white transition">Email</a>
-                <a href="https://www.linkedin.com/in/hridhyatshibuh4" target="_blank" class="text-gray-200 text-2xl md:text-3xl hover:text-white transition">LinkedIn</a>
-                <a href="https://github.com/Hridhyatshibu4" target="_blank" class="text-gray-200 text-2xl md:text-3xl hover:text-white transition">GitHub</a>
+                <a href="mailto:hridhyatshibuh4@gmail.com" class="text-gray-200 text-xl md:text-2xl hover:text-white transition">Email</a>
+                <a href="https://www.linkedin.com/in/hridhyatshibuh4" target="_blank" class="text-gray-200 text-xl md:text-2xl hover:text-white transition">LinkedIn</a>
+                <a href="https://github.com/Hridhyatshibu4" target="_blank" class="text-gray-200 text-xl md:text-2xl hover:text-white transition">GitHub</a>
             </div>
         </div>
     </footer>
