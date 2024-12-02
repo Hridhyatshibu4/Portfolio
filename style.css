@@ -30,16 +30,31 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 6rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        flex-direction: row;
+        text-align: left;
+    }
 }
 
 .about-section .profile-img {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
-    width: 45%;
+    width: 80%;
+}
+
+@media (min-width: 768px) {
+    .about-section .profile-img {
+        width: 45%;
+    }
 }
 
 .about-section .profile-img:hover {
@@ -47,8 +62,16 @@ body {
 }
 
 .about-section .about-text {
-    width: 50%;
-    margin-left: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .about-section .about-text {
+        width: 50%;
+        margin-left: 2rem;
+        margin-top: 0;
+    }
 }
 
 .skills {
@@ -132,6 +155,13 @@ body {
     border-radius: 8px;
     margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .projects .project img {
+        width: 40%;
+    }
 }
 
 .contact-section {
@@ -151,8 +181,15 @@ body {
 
 .contact-icons {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .contact-icons {
+        flex-direction: row;
+    }
 }
 
 .contact-icons a {
