@@ -4,178 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hridhya's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 1rem 0;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-
-        .hero {
-            text-align: center;
-        }
-
-        .hero img {
-            max-width: 150px;
-            border-radius: 50%;
-        }
-
-        .hero h2 {
-            margin-top: 1rem;
-            font-size: 2rem;
-        }
-
-        .section-title {
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-        }
-
-        .skills, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .skill, .project {
-            background: #fff;
-            padding: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            flex: 1 1 calc(33.333% - 1rem);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            background: #333;
-            color: #fff;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .skill, .project {
-                flex: 1 1 calc(50% - 1rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .skill, .project {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+    <title>Hridhya Shibu | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <h1>Hridhya's Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body class="font-poppins bg-cover bg-center text-gray-200" style="background-image: url('./images/background.jpeg');">
+    <header class="sticky top-0 z-50 bg-gray-800 bg-opacity-90 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-3xl font-bold text-white">Hridhya Shibu</div>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-white font-semibold hover:text-gray-300 transition">About</a></li>
+                    <li><a href="#skills" class="text-white font-semibold hover:text-gray-300 transition">Skills</a></li>
+                    <li><a href="#projects" class="text-white font-semibold hover:text-gray-300 transition">Projects</a></li>
+                    <li><a href="#contact-footer" class="text-white font-semibold hover:text-gray-300 transition">Contact Me</a></li>
+                    <li><a href="./assets/resume.pdf" target="_blank" class="text-white font-semibold hover:text-gray-300 transition">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <img src="placeholder.jpg" alt="Hridhya's Portrait">
-        <h2>Hello! I'm Hridhya</h2>
-        <p>Aspiring Analyst Programmer with a passion for data and technology.</p>
+    <section class="hero h-screen flex flex-col justify-center items-center text-center text-white backdrop-blur-md">
+        <h1 class="text-7xl font-bold animate-fade-in-down">Hridhya Shibu</h1>
+        <p class="text-4xl mt-4 animate-fade-in-up">Aspiring Analyst Programmer | Data-Driven Problem Solver</p>
     </section>
 
-    <section id="about">
-        <h3 class="section-title">About Me</h3>
-        <p>I am a Computer Science graduate majoring in Data Science. Currently, I am preparing for my Master's in Information Technology Management at Deakin University. My goal is to work as an Analyst Programmer, leveraging data-driven solutions to solve complex problems.</p>
+    <section id="about" class="about-section max-w-7xl mx-auto py-16 px-4 flex items-center">
+        <div class="w-1/2 p-6">
+            <img src="./images/your-photo.png" alt="Hridhya Shibu" class="rounded-xl shadow-lg animate-scale-up w-full h-auto">
+        </div>
+        <div class="w-1/2 p-6">
+            <h2 class="text-6xl font-bold text-gray-800 animate-slide-in-left">About Me</h2>
+            <p class="text-2xl mt-4">I am a Computer Science graduate specializing in Data Science. I have experience in statistical analysis,
+                data manipulation, and visualization techniques. Currently, I am preparing for my Master's in IT Management
+                at Deakin University.</p>
+        </div>
     </section>
 
-    <section id="skills">
-        <h3 class="section-title">Skills</h3>
-        <div class="skills">
-            <div class="skill">
-                <h4>Programming</h4>
-                <p>Python, Java, SQL</p>
-            </div>
-            <div class="skill">
-                <h4>Data Analysis</h4>
-                <p>R, Tableau, Excel</p>
-            </div>
-            <div class="skill">
-                <h4>Web Development</h4>
-                <p>HTML, CSS, JavaScript</p>
+    <section id="skills" class="skills-section py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-6xl font-bold text-center mb-12 text-gray-200 animate-fade-in">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="skill bg-[#624b42] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <h4 class="text-4xl font-bold text-gray-200">Data Science</h4>
+                    <p class="text-xl mt-4">Python, SQL, Machine Learning, Data Visualization</p>
+                </div>
+                <div class="skill bg-[#624b42] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <h4 class="text-4xl font-bold text-gray-200">Software Development</h4>
+                    <p class="text-xl mt-4">REST APIs, MongoDB, FastAPI, Docker</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h3 class="section-title">Projects</h3>
-        <div class="projects">
-            <div class="project">
-                <h4>Project Title 1</h4>
-                <p>Description of the project and its key features.</p>
-            </div>
-            <div class="project">
-                <h4>Project Title 2</h4>
-                <p>Description of the project and its key features.</p>
-            </div>
-            <div class="project">
-                <h4>Project Title 3</h4>
-                <p>Description of the project and its key features.</p>
+    <section id="projects" class="projects-section py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-6xl font-bold text-center mb-12 text-gray-200 animate-fade-in">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <h4 class="text-4xl font-bold to-black cursor-pointer" onclick="toggleProjectDetails(this)">Project Echo</h4>
+                    <img src="./images/project1-thumbnail.png" alt="Project Echo" class="w-1/4 h-auto mt-4 rounded-xl animate-slide-in-right">
+                    <div class="project-details hidden mt-4">
+                        <p><strong>Project Overview:</strong> Project Echo, founded in 2022, develops bioacoustics tools to help conservationists track endangered species through audio classification. Databytes powers this initiative with innovative technologies.</p>
+                        <p><strong>Role Involved:</strong>
+                            <ul class="list-disc list-inside">
+                                <li>Led the API team, refactoring code for maintainability and security by implementing input validation, authentication, and encryption to protect sensitive data.</li>
+                                <li>Developed and tested API endpoints for user authentication and data retrieval, ensuring secure data handling through validation testing.</li>
+                                <li>Integrated environment variables, improving system scalability, security, and deployment efficiency while reducing vulnerabilities.</li>
+                                <li>Coordinated team tasks, improving task completion times and troubleshooting technical issues, minimizing downtime, and preventing future API challenges.</li>
+                            </ul>
+                        </p>
+                        <p><strong>Tools Used:</strong> Trello, Python, FastAPI, MongoDB</p>
+                    </div>
+                </div>
+                <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <h4 class="text-4xl font-bold text-gray-200 cursor-pointer" onclick="toggleProjectDetails(this)">IREC Safety System</h4>
+                    <img src="./images/project2-thumbnail.png" alt= "IREC Safety System" class="w-1/4 h-auto mt-4 rounded-xl animate-slide-in-right">
+                    <div class="project-details hidden mt-4">
+                        <p><strong>Project Overview:</strong> Enhanced safety procedures, created a farm induction video, developed a safety sign-in system, and contributed to renovation plans for IREC’s educational infrastructure.</p>
+                        <p><strong>Role Involved:</strong>
+                            <ul class="list-disc list-inside">
+                                <li>Led tech integration, streamlining safety procedures and enhancing visitor engagement.</li>
+                                <li>Developed a 3.5-minute farm induction video with QR codes for guided tours, incorporating the Safety Ag app.</li>
+                                <li>Implemented a safety sign-in system and leveraged data analysis tools to improve processes.</li>
+                                <li>Managed funding and regulatory approvals, ensuring compliance with industry standards.</li>
+                                <li>Improved site accessibility by developing digital tools to make educational resources more engaging.</li>
+                            </ul>
+                        </p>
+                        <p><strong>Tools Used:</strong> Trello, Excel, Python, Adobe, Canva, InVideo AI, QR Code Generator, Google Forms</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h3 class="section-title">Contact</h3>
-        <p>Feel free to reach out to me at <a href="mailto:hridhya.email@example.com">hridhya.email@example.com</a>.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Hridhya. All rights reserved.</p>
+    <footer id="contact-footer" class="contact-footer py-16">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-gray-200 mb-6">Contact Me</h2>
+            <div class="flex justify-center space-x-8">
+                <a href="mailto:hridhyatshibuh4@gmail.com" class="text-gray-200 text-3xl hover:text-white transition">Email</a>
+                <a href="https://www.linkedin.com/in/hridhyatshibuh4" target="_blank" class="text-gray-200 text-3xl hover:text-white transition">LinkedIn</a>
+                <a href="https://github.com/Hridhyatshibu4" target="_blank" class="text-gray-200 text-3xl hover:text-white transition">GitHub</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        function toggleProjectDetails(element) {
+            const project = element.parentElement;
+            project.classList.toggle("active");
+            project.querySelector(".project-details").classList.toggle("hidden");
+        }
+    </script>
 </body>
 
 </html>
