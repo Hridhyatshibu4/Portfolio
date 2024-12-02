@@ -60,37 +60,58 @@
     <section id="projects" class="projects-section py-16">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl md:text-6xl font-bold text-center mb-12 text-gray-200 animate-fade-in">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-8">
                 <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
-                    <div class="flex items-center">
-                        <img src="./images/project1-thumbnail.png" alt="Project Echo" class="w-24 h-24 mr-6 rounded-xl">
-                        <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">Project Echo</h4>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="./images/project1-thumbnail.png" alt="Project Echo" class="w-24 h-24 mr-6 rounded-xl">
+                            <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">
+                                Project Echo
+                            </h4>
+                        </div>
+                        <span class="text-black text-2xl cursor-pointer" onclick="toggleProjectDetails(this)">
+                            &#9662;
+                        </span>
                     </div>
-                    <div class="project-details hidden mt-4">
-                        <p><strong>Overview:</strong> Project Echo uses bioacoustic analysis to track endangered species by classifying audio data. As the lead API developer, I focused on building efficient RESTful APIs and enhancing system security through input validation, user authentication, and data encryption. I also optimized system performance by integrating MongoDB for data storage and FastAPI for fast data processing. Docker was used for smooth deployment, ensuring scalability and reliability for large datasets. The project significantly aids conservation efforts by providing real-time species tracking.
-                        </p>
+                    <div class="project-details hidden mt-4  text-black cursor-pointer">
+                        <p><strong>Overview:</strong> Project Echo uses bioacoustic analysis to track endangered species by classifying audio data. As the lead API developer, I focused on building efficient RESTful APIs and enhancing system security through input validation, user authentication, and data encryption. I also optimized system performance by integrating MongoDB for data storage and FastAPI for fast data processing. Docker was used for smooth deployment, ensuring scalability and reliability for large datasets. The project significantly aids conservation efforts by providing real-time species tracking.</p>
                         <br>
                         <p><strong>Tools Used:</strong> Python, FastAPI, MongoDB, Docker</p>
                     </div>
                 </div>
-              
+
                 <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
-                    <div class="flex items-center">
-                        <img src="./images/project3-thumbnail.jpeg" alt="Appointment Data Analysis" class="w-24 h-24 mr-6 rounded-xl">
-                        <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">Appointment Data Analysis</h4>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="./images/project3-thumbnail.jpeg" alt="Appointment Data Analysis" class="w-24 h-24 mr-6 rounded-xl">
+                            <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">
+                                Appointment Data Analysis
+                            </h4>
+                        </div>
+                        <span class="text-black text-2xl cursor-pointer" onclick="toggleProjectDetails(this)">
+                            &#9662;
+                        </span>
                     </div>
-                    <div class="project-details hidden mt-4">
+                    <div class="project-details hidden mt-4  text-black cursor-pointer">
                         <p><strong>Overview:</strong> Currently working on an analytical project to enhance Telehealth services by analyzing daily appointment reports. The focus is to identify and resolve issues surrounding failed connections between patients and specialist clinics at Eastern Health. Using Power BI and Power Query, this project aims to detect patterns in missed appointments, optimize scheduling workflows, and streamline communication channels to improve patient service delivery and reduce operational delays.</p>
                         <br>
                         <p><strong>Tools Used:</strong> Power BI, Power Query, Excel, Python, IPM, CPF, Health Direct, Modica</p>
                     </div>
                 </div>
+
                 <div class="project bg-[#a49f9d] p-8 rounded-lg shadow-lg transform hover:scale-105 transition">
-                    <div class="flex items-center">
-                        <img src="./images/project2-thumbnail.png" alt="IREC Safety System" class="w-24 h-24 mr-6 rounded-xl">
-                        <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">IREC Safety System</h4>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="./images/project2-thumbnail.png" alt="IREC Safety System" class="w-24 h-24 mr-6 rounded-xl">
+                            <h4 class="text-3xl md:text-4xl font-bold text-black cursor-pointer" onclick="toggleProjectDetails(this)">
+                                IREC Safety System
+                            </h4>
+                        </div>
+                        <span class="text-black text-2xl cursor-pointer" onclick="toggleProjectDetails(this)">
+                            &#9662;
+                        </span>
                     </div>
-                    <div class="project-details hidden mt-4">
+                    <div class="project-details hidden mt-4  text-black cursor-pointer">
                         <p><strong>Overview:</strong> Led the tech integration to enhance safety procedures and developed a digital safety sign-in system, improving efficiency by 40%. I also created a farm induction video with interactive QR codes.</p>
                         <br>
                         <p><strong>Tools Used:</strong> Python, Adobe, Canva, QR Code Generator, Excel</p>
@@ -114,10 +135,12 @@
     <script>
         function toggleProjectDetails(element) {
             const projectDetails = element.closest('.project').querySelector('.project-details');
+            projectDetails.classList.toggle('hidden');
+            const arrow = element.closest('.flex').querySelector('span');
             if (projectDetails.classList.contains('hidden')) {
-                projectDetails.classList.remove('hidden');
+                arrow.innerHTML = '&#9662;';
             } else {
-                projectDetails.classList.add('hidden');
+                arrow.innerHTML = '&#9652;';
             }
         }
     </script>
