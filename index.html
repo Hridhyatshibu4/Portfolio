@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hridhya Shibu | Portfolio</title>
     
     <!-- Poppins Font for Header -->
@@ -46,6 +46,35 @@
       .footer-content {
         position: relative;
         z-index: 2;
+      }
+      /* Modal styles for zoom in text */
+      #aboutZoomModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+      }
+      #aboutZoomModal .modal-content {
+        background: #fff;
+        color: #0077B3;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        position: relative;
+        max-width: 600px;
+        width: 90%;
+      }
+      #aboutZoomModal .close-modal {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -110,7 +139,7 @@
           </ul>
         </nav>
         <!-- Hamburger Menu for Mobile -->
-        <div class="md:hidden">
+        <div class="md:hidden relative">
           <button id="menu-toggle" class="text-white focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -127,80 +156,78 @@
               />
             </svg>
           </button>
+          <!-- Small dropdown menu that drops down on the right -->
+          <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-40 bg-gray-800 rounded shadow-lg">
+            <ul class="py-2">
+              <li>
+                <a href="#about" class="block px-4 py-2 text-white hover:bg-gray-700">About</a>
+              </li>
+              <li>
+                <a href="#skills" class="block px-4 py-2 text-white hover:bg-gray-700">Skills</a>
+              </li>
+              <li>
+                <a href="#projects" class="block px-4 py-2 text-white hover:bg-gray-700">Projects</a>
+              </li>
+              <li>
+                <a href="./assets/resume.pdf" target="_blank" class="block px-4 py-2 text-white hover:bg-gray-700">Resume</a>
+              </li>
+              <li>
+                <a href="#contact-footer" class="block px-4 py-2 text-white hover:bg-gray-700">Contact Me</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="md:hidden hidden bg-gray-800">
-        <ul class="px-4 pt-2 pb-4 space-y-1">
-          <li>
-            <a
-              href="#about"
-              class="block text-white font-semibold hover:text-gray-300 transition"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="block text-white font-semibold hover:text-gray-300 transition"
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projects"
-              class="block text-white font-semibold hover:text-gray-300 transition"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="./assets/resume.pdf"
-              target="_blank"
-              class="block text-white font-semibold hover:text-gray-300 transition"
-              >Resume</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact-footer"
-              class="block text-white font-semibold hover:text-gray-300 transition"
-              >Contact Me</a
-            >
-          </li>
-        </ul>
       </div>
     </header>
 
-    <!-- HERO SECTION (Full-Screen / Responsive) -->
-    <section id="hero" class="m-0 p-0">
-      <div class="relative w-full aspect-video overflow-hidden">
-        <video
-          autoplay
-          muted
-          playsinline
-          class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="./videos/your_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
+    <!-- HERO SECTION -->
+<section id="hero" class="relative w-full min-h-[52vh] md:min-h-screen m-0 p-0">
+  <video
+    autoplay
+    muted
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="./videos/your_video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
 
-    <!-- ABOUT SECTION (Responsive Video) -->
-    <section id="about" class="m-0 p-0">
-      <div class="relative w-full aspect-video overflow-hidden">
-        <video
-          autoplay
-          muted
-          playsinline
-          class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="./videos/about_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+
+   <!-- ABOUT SECTION -->
+<section id="about" class="relative w-full min-h-[52vh] md:min-h-screen m-0 p-0">
+  <video
+    autoplay
+    muted
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="./videos/about_video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Zoom In Button positioned at top right corner -->
+  <button
+    id="zoomInButton"
+    class="absolute top-2 right-2 bg-white text-[#0077B3] font-semibold
+           border border-[#0077B3] rounded px-3 py-1 transition
+           hover:bg-[#0077B3] hover:text-white"
+  >
+    Zoom In
+  </button>
+</section>
+
+
+    <!-- Zoom Modal for About Me Text -->
+    <div id="aboutZoomModal" class="flex">
+      <div class="modal-content">
+        <button id="closeModalButton" class="close-modal">&times;</button>
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <p class="text-lg">
+          Hi, I'm an aspiring Analyst Programmer and final-year Computer Science student at Deakin University, specialising in Data Science. With robust statistical analysis, data manipulation, and visualisation skills, alongside deep proficiency in Python and statistics. I transform complex data into actionable insights. Having led technology projects in healthcare and construction. I've converted consumer feedback into effective, data-driven solutions. As a proud ambassador for women in STEM, I thrive in collaborative, supportive teams, leveraging advanced analytics to tackle challenges and spark innovation. Beyond coding, dancing is my passion—a genuine expression of creativity and who I am.
+        </p>
       </div>
-    </section>
+    </div>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="skills-section py-16 bg-[#E0F7FA]">
@@ -407,6 +434,11 @@
       </div>
     </footer>
 
+    <!-- Copyright Bar (Rock Bottom) -->
+    <div class="bg-gray-800 text-white py-2 text-center">
+      © 2025 HRIDHYA SHIBU - All Rights Reserved
+    </div>
+
     <!-- All JavaScript in one place -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -426,7 +458,6 @@
         const toggleButtons = document.querySelectorAll('.toggle-details-btn');
         toggleButtons.forEach(function(button) {
           button.addEventListener('click', function() {
-            // Look for the .project-details element in the same parent container
             const details = button.parentElement.querySelector('.project-details');
             if (details) {
               if (details.classList.contains('hidden')) {
@@ -444,7 +475,6 @@
          * Scroll Progress Bar
          * ------------------------------ */
         const progressBar = document.getElementById('progress-bar');
-        
         function updateProgressBar() {
           const docElement = document.documentElement;
           const scrollTop = docElement.scrollTop;
@@ -452,7 +482,6 @@
           const scrollPercent = (scrollTop / scrollHeight) * 100;
           progressBar.style.width = scrollPercent + '%';
         }
-        
         window.addEventListener('scroll', updateProgressBar);
         updateProgressBar();
 
@@ -463,7 +492,6 @@
         const ctx = canvas.getContext('2d');
         let bubbles = [];
         let canvasWidth, canvasHeight;
-
         function resizeCanvas() {
           canvasWidth = canvas.width = canvas.offsetWidth;
           canvasHeight = canvas.height = canvas.offsetHeight;
@@ -508,7 +536,6 @@
           bubbles.forEach(bubble => {
             ctx.beginPath();
             ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
-            // Lighter bubble color (light blue)
             ctx.fillStyle = `rgba(173, 216, 230, ${bubble.opacity})`;
             ctx.fill();
             ctx.strokeStyle = `rgba(255, 255, 255, ${bubble.opacity})`;
@@ -537,6 +564,24 @@
         
         canvas.addEventListener('click', popBubble);
         canvas.addEventListener('touchstart', popBubble);
+
+        /* ------------------------------
+         * About Zoom Modal
+         * ------------------------------ */
+        const zoomInButton = document.getElementById('zoomInButton');
+        const aboutZoomModal = document.getElementById('aboutZoomModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+        zoomInButton.addEventListener('click', function() {
+          aboutZoomModal.style.display = 'flex';
+        });
+        closeModalButton.addEventListener('click', function() {
+          aboutZoomModal.style.display = 'none';
+        });
+        aboutZoomModal.addEventListener('click', function(e) {
+          if (e.target === aboutZoomModal) {
+            aboutZoomModal.style.display = 'none';
+          }
+        });
       });
     </script>
   </body>
