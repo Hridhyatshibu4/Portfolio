@@ -1,6 +1,6 @@
 // tailwind.config.js
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  content: ["./**/*.{html,js}"],
   darkMode: "class",          // ⟵ add this line
   theme: {
     extend: {
