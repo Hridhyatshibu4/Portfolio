@@ -1,0 +1,93 @@
+<!-- partials/experience.html -->
+<section id="experience" class="container mx-auto py-20 gradient-bg flex flex-col md:flex-row gap-10">
+  <!-- left column -->
+  <div class="md:w-1/4">
+    <h2 class="font-inter text-xl text-gray-400 mb-4">- CAREER PATH</h2>
+    <h3 class="font-plus text-3xl font-bold mb-6">Work Experiences</h3>
+
+    <ul id="expTabs" class="space-y-2">
+      <li><button class="exp-btn w-full text-left px-3 py-2 rounded active-tab" data-company="Chameleon">Chameleon</button></li>
+      <li><button class="exp-btn w-full text-left px-3 py-2 rounded" data-company="Databytes">Databytes</button></li>
+      <li><button class="exp-btn w-full text-left px-3 py-2 rounded" data-company="Eastern">Eastern Health</button></li>
+      <li><button class="exp-btn w-full text-left px-3 py-2 rounded" data-company="Deakin">Deakin Talent</button></li>
+    </ul>
+  </div>
+
+  <!-- right column -->
+  <div class="md:w-3/4" id="expContent"></div>
+</section>
+
+<script>
+const data = {
+  Chameleon: {
+    role  : "Front‑End Lead & Chatbot Developer | Project MOP | Chameleon",
+    period: "Mar 2025 – Jun 2025 • Full‑time",
+    points: [
+      "React/TypeScript chatbot with regex intent parsing and data queries.",
+      "Node.js live‑search API (&lt;150 ms for 140+ manifests).",
+      "Responsive redesign with light/dark‑mode support.",
+      "Led sprints, demos, and stakeholder feedback."
+    ]
+  },
+  Databytes: {
+    role  : "Team Leader | API Team | Project Echo | Databytes",
+    period: "Jul 2024 – Oct 2024 • Full‑time",
+    points: [
+      "Led RESTful API pipeline for bio‑acoustic analysis with global partners.",
+      "Hardened security: validation, auth, encryption (‑30 % vulnerabilities).",
+      "Env‑var deployment; response times ‑20 %, config errors ‑15 %.",
+      "Mentored team in Agile & CI workflows."
+    ]
+  },
+  Eastern: {
+    role  : "Telehealth Co‑ordinator & Specialist Clinic Clerk | Eastern Health",
+    period: "Sep 2023 – Present • Part‑time",
+    points: [
+      "Pioneered telehealth troubleshooting – efficiency +30 %.",
+      "Bulk SMS campaigns (1 000 + patients / month).",
+      "Analytics cut delays 10 %; optimised patient flow.",
+      "Handled reception, scheduling & record management."
+    ]
+  },
+  Deakin: {
+    role  : "Career Ambassador & Trainer | Deakin Talent",
+    period: "Feb 2024 – Nov 2024 • Ambassador · Feb 2025 – Jul 2025 • Trainer",
+    points: [
+      "Event‑promo strategy: student participation +20 %, NPS 95 %.",
+      "Coached 50 + students; 30 % secured roles.",
+      "Trained 2025 cohort, streamlined onboarding."
+    ]
+  }
+};
+
+function render(company){
+  const {role,period,points} = data[company];
+  document.getElementById('expContent').innerHTML = `
+    <h4 class="font-plus text-[25px] text-[#7E74F1] mb-2">${role}</h4>
+    <span class="text-[18px]">${period}</span>
+    <ul class="list-disc ml-5 mt-4 space-y-2 text-[18px]">
+      ${points.map(p=>`<li>${p}</li>`).join('')}
+    </ul>`;
+}
+
+document.querySelectorAll('.exp-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.exp-btn').forEach(b=>b.classList.remove('active-tab'));
+    btn.classList.add('active-tab');
+    render(btn.dataset.company);
+  });
+});
+
+/* default */
+render('Chameleon');
+</script>
+
+<style>
+  /* selected tab */
+  .active-tab{ background:#EAE6FE !important; color:#7E74F1 !important; }
+
+  /* theme‑adaptive text for the description pane */
+  #expContent, #expContent *{
+    color:var(--text-color) !important;   /* dark = white, light = dark */
+  }
+</style>
