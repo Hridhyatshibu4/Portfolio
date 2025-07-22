@@ -1,7 +1,7 @@
 <!-- partials/projects.html -->
 <section id="projects" class="container mx-auto py-20 gradient-bg">
   <!-- headings -->
-  <h2 class="font-inter text-xl mb-2 text-black">‑ MY WORKS</h2>
+  <h2 class="font-inter text-xl mb-2 text-black">‑ MY WORKS</h2>
   <h3 class="font-plus text-3xl font-bold mb-10 text-black">Projects</h3>
 
   <div
@@ -15,7 +15,6 @@
           img   : 'assets/images/p1.jpg',
           short : 'React + TypeScript chatbot',
           full  : `
-            <p><strong>Role:</strong> Front‑End Lead & Chatbot Dev (Mar 25 – Jun 25)</p>
             <ul class='list-disc ml-5 space-y-1'>
               <li>Regex intent parser, live‑search API (&lt;150 ms).</li>
               <li>Responsive redesign with theme toggle.</li>
@@ -23,21 +22,20 @@
             </ul>
             <div class='mt-3 flex space-x-4 items-center'>
               <a href='https://youtu.be/zhN1r436n10' target='_blank'>
-                <img src='assets/images/youtube.svg' class='w-7 h-7 inline' alt="Demo">
+                <img src='assets/images/youtube.svg' class='w-7 h-7 inline'>
               </a>
               <a href='https://github.com/Chameleon-company/Chameleon-Website' target='_blank'>
-                <img src='assets/images/github.svg' class='w-7 h-7 inline' alt="GitHub">
+                <img src='assets/images/github.svg' class='w-7 h-7 inline'>
               </a>
-            </div>`,
+            </div>`
         },
         /* ── Echo ───────────────────────────────────────── */
         {
           title : 'Project Echo',
           img   : 'assets/images/p2.png',
-          short : 'Bio‑acoustic REST API',
+          short : 'Bio­‑acoustic REST API',
           full  : `
-            <p><strong>Role:</strong> API Lead (Jul 24 – Oct 24)</p>
-            <p><strong>Overview:</strong> Endangered-species tracking via audio classification.</p>
+            <p>Endangered‑species tracking via audio classification.</p>
             <ul class='list-disc ml-5 space-y-1'>
               <li>FastAPI endpoints, MongoDB storage, JWT auth.</li>
               <li>Dockerised for scalable deployment.</li>
@@ -45,9 +43,9 @@
             </ul>
             <div class='mt-3'>
               <a href='https://github.com/DataBytes-Organisation/Project-Echo' target='_blank'>
-                <img src='assets/images/github.svg' class='w-7 h-7 inline' alt="GitHub">
+                <img src='assets/images/github.svg' class='w-7 h-7 inline'>
               </a>
-            </div>`,
+            </div>`
         },
         /* ── iREC ──────────────────────────────────────── */
         {
@@ -55,23 +53,22 @@
           img   : 'assets/images/p3.png',
           short : 'Digital sign‑in & QR induction',
           full  : `
-            <p><strong>Role:</strong> Project Intern (Feb 24 – Present)</p>
-            <p><strong>Overview:</strong> 40 % efficiency gain in on‑farm safety.</p>
+            <p>40 % efficiency gain in on‑farm safety.</p>
             <ul class='list-disc ml-5 space-y-1'>
               <li>Python back‑end, interactive induction video.</li>
               <li><em>Tools:</em> Python • Adobe • Canva • Excel</li>
             </ul>
             <div class='mt-3'>
               <a href='https://github.com/your/repo3' target='_blank'>
-                <img src='assets/images/github.svg' class='w-7 h-7 inline' alt="GitHub">
+                <img src='assets/images/github.svg' class='w-7 h-7 inline'>
               </a>
-            </div>`,
+            </div>`
         },
         /* ── Portfolio ─────────────────────────────────── */
         {
           title : 'Personal Portfolio',
           img   : 'assets/images/p4.png',
-          short : 'Tailwind & Alpine SPA',
+          short : 'Tailwind & Alpine SPA',
           full  : `
             <ul class='list-disc ml-5 space-y-1'>
               <li>Spline 3D hero, HTMX partials, theme toggle.</li>
@@ -79,14 +76,14 @@
             </ul>
             <div class='mt-3'>
               <a href='https://github.com/your/portfolio' target='_blank'>
-                <img src='assets/images/github.svg' class='w-7 h-7 inline' alt="GitHub">
+                <img src='assets/images/github.svg' class='w-7 h-7 inline'>
               </a>
-            </div>`,
+            </div>`
         }
       ],
       slice(){ return this.projects.slice(this.page*this.per,(this.page+1)*this.per) },
       next(){ if((this.page+1)*this.per < this.projects.length) this.page++ },
-      prev(){ if(this.page > 0) this.page-- }
+      prev(){ if(this.page>0) this.page-- }
     }"
     class="relative"
   >
@@ -105,10 +102,10 @@
     </div>
 
     <!-- cards row -->
-    <div class="grid md:grid-cols-3 gap-14">
+    <div class="grid md:grid-cols-3 gap-14 items-start">
       <template x-for="proj in slice()" :key="proj.title">
-        <!-- each card has its own `open` state -->
-        <div x-data="{ open:false }" class="bg-[#EAE6FE] rounded-xl shadow-lg overflow-hidden flex flex-col">
+        <!-- Each card has its own open state -->
+        <div x-data="{ open:false }" class="bg-[#EAE6FE] rounded-xl shadow-lg overflow-hidden flex flex-col force-black transition-all duration-300">
           <!-- image with subtle fade -->
           <div class="relative h-56">
             <img :src="proj.img" :alt="proj.title" class="absolute inset-0 w-full h-full object-cover">
@@ -116,21 +113,25 @@
           </div>
 
           <!-- text -->
-          <div class="p-6 flex-1 flex flex-col justify-between text-black">
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <div class="flex justify-between items-start">
                 <h4 class="font-plus text-2xl font-semibold" x-text="proj.title"></h4>
-                <!-- toggle this card only -->
                 <button
                   @click="open = !open"
-                  :class="{ 'rotate-180': open }"
+                  :class="{'rotate-180': open}"
                   class="text-primary text-[26px] transition-transform"
                 >▾</button>
               </div>
               <p class="text-[20px] mt-1" x-text="proj.short"></p>
             </div>
-            <!-- only this card’s details -->
-            <div x-show="open" x-transition.opacity class="mt-4 text-[18px]" x-html="proj.full"></div>
+            <!-- collapse -->
+            <div
+              x-show="open"
+              x-transition.opacity
+              class="mt-4 text-[18px]"
+              x-html="proj.full"
+            ></div>
           </div>
         </div>
       </template>
@@ -139,19 +140,24 @@
 </section>
 
 <style>
-  .arrow-btn {
-    width: 3.5rem;           /* 56px */
-    height: 3.5rem;
-    border-radius: 1rem;
-    background: #EAE6FE;
-    color: #7E74F1;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .2s;
+  /* force-black overrides global color swap */
+  .force-black, .force-black * { color:#000 !important; }
+
+  /* bigger rounded arrow buttons */
+  .arrow-btn{
+    width:3.5rem;          /* 72 px */
+    height:3.5rem;
+    border-radius:1.4rem;  /* soft rounded square */
+    background:#EAE6FE;    /* pale box */
+    color:#7E74F1;         /* purple arrow */
+    font-size:2.5rem;      /* big ‹ › glyph */
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s;
   }
-  .arrow-btn:hover:not(:disabled) {
-    background: #dcd6ff;
+  .arrow-btn:hover:not(:disabled){
+    background:#dcd6ff;
   }
 </style>
